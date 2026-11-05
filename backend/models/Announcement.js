@@ -1,0 +1,2 @@
+const mongoose=require('mongoose');
+const schema=new mongoose.Schema({title:{type:String,required:true,trim:true},content:{type:String,required:true},category:{type:String,enum:['General','HR','Event','Policy'],default:'General'},audience:{type:String,enum:['All','HR','Manager','Employee'],default:'All'},author:{type:mongoose.Schema.Types.ObjectId,ref:'User'},published:{type:Boolean,default:true}},{timestamps:true});module.exports=mongoose.model('Announcement',schema);
